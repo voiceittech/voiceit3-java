@@ -195,17 +195,13 @@ public class VoiceIt3 {
 	}
 
 	public String removeUserFromGroup(String groupId, String userId) {
-
-		HttpEntity entity = MultipartEntityBuilder
-		    .create()
-		    .addTextBody("groupId", groupId)
-		    .addTextBody("userId", userId)
-		    .build();
-		HttpPut httpPut = new HttpPut(BASE_URL + "/groups/removeUser" + notificationUrl);
-		httpPut.setEntity(entity);
-
 		try {
-			return EntityUtils.toString(httpClient.execute(httpPut).getEntity());
+			String url = BASE_URL + "/groups/removeUser?groupId=" + groupId + "&userId=" + userId;
+			if (!notificationUrl.isEmpty()) {
+				url += "&" + notificationUrl.substring(1);
+			}
+			return EntityUtils.toString(httpClient.execute(
+					new HttpDelete(url)).getEntity());
 		} catch (Exception e) {
 			return e.getMessage();
 		}
