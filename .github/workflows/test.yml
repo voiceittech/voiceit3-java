@@ -1,0 +1,23 @@
+name: API Test
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+      - name: Build
+        run: mvn package -q -DskipTests
+      - name: Copy dependencies
+        run: mvn dependency:copy-dependencies -q
+      - name: Run API test
+        env:
+          VOICEIT_API_KEY: ${{ secrets.VOICEIT_API_KEY }}
+          VOICEIT_API_TOKEN: ${{ secrets.VOICEIT_API_TOKEN }}
+        run: |
+          cd test
+          javac -cp "../target/*.jar:../target/dependency/*" TestExample.java
+          java -cp ".:../target/*.jar:../target/dependency/*" TestExample
