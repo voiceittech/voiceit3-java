@@ -9,23 +9,37 @@ public class TestExample {
 
         VoiceIt3 vi = new VoiceIt3(ak, at);
         String phrase = "never forget tomorrow is a new day";
-        String td = "test-data";
+        String td = "../test-data";
         int errors = 0;
 
-        JSONObject r = new JSONObject(vi.createUser());
+        String raw = vi.createUser();
+        System.out.println("Raw createUser: " + raw.substring(0, Math.min(100, raw.length())));
+        JSONObject r = new JSONObject(raw);
         String userId = r.getString("userId");
         System.out.println("CreateUser: " + r.getString("responseCode"));
 
         for (int i = 1; i <= 3; i++) {
-            r = new JSONObject(vi.createVideoEnrollment(userId, "en-US", phrase, td + "/videoEnrollmentA" + i + ".mov"));
-            System.out.println("VideoEnrollment" + i + ": " + r.getString("responseCode"));
-            if (!r.getString("responseCode").equals("SUCC")) errors++;
+            raw = vi.createVideoEnrollment(userId, "en-US", phrase, td + "/videoEnrollmentA" + i + ".mov");
+            try {
+                r = new JSONObject(raw);
+                System.out.println("VideoEnrollment" + i + ": " + r.getString("responseCode"));
+                if (!r.getString("responseCode").equals("SUCC")) errors++;
+            } catch (Exception e) {
+                System.out.println("VideoEnrollment" + i + ": FAIL (non-JSON: " + raw.substring(0, Math.min(80, raw.length())) + ")");
+                errors++;
+            }
         }
 
-        r = new JSONObject(vi.videoVerification(userId, "en-US", phrase, td + "/videoVerificationA1.mov"));
-        System.out.println("VideoVerification: " + r.getString("responseCode"));
-        System.out.println("  Voice: " + r.optDouble("voiceConfidence", 0) + ", Face: " + r.optDouble("faceConfidence", 0));
-        if (!r.getString("responseCode").equals("SUCC")) errors++;
+        raw = vi.videoVerification(userId, "en-US", phrase, td + "/videoVerificationA1.mov");
+        try {
+            r = new JSONObject(raw);
+            System.out.println("VideoVerification: " + r.getString("responseCode"));
+            System.out.println("  Voice: " + r.optDouble("voiceConfidence", 0) + ", Face: " + r.optDouble("faceConfidence", 0));
+            if (!r.getString("responseCode").equals("SUCC")) errors++;
+        } catch (Exception e) {
+            System.out.println("VideoVerification: FAIL (non-JSON: " + raw.substring(0, Math.min(80, raw.length())) + ")");
+            errors++;
+        }
 
         vi.deleteAllEnrollments(userId);
         vi.deleteUser(userId);
