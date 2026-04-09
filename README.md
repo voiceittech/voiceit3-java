@@ -1,10 +1,10 @@
 <img src="./java.png" width="100%" style="width:100%" />
 
-[![API Test](https://github.com/voiceittech/VoiceIt3-Java/actions/workflows/test.yml/badge.svg)](https://github.com/voiceittech/VoiceIt3-Java/actions/workflows/test.yml)
-[![Dependabot](https://img.shields.io/github/issues-pr/voiceittech/VoiceIt3-Java/dependencies?label=dependabot&logo=dependabot&color=025e8c)](https://github.com/voiceittech/VoiceIt3-Java/pulls?q=is%3Apr+label%3Adependencies)
-[![Version](https://img.shields.io/badge/version-1.6.4-blue)](https://github.com/voiceittech/VoiceIt3-Java)
-[![License: MIT](https://img.shields.io/badge/license-MIT-green)](https://github.com/voiceittech/VoiceIt3-Java/blob/main/LICENSE)
-[![Platform](https://img.shields.io/badge/platform-Java-lightgrey)](https://github.com/voiceittech/VoiceIt3-Java)
+[![API Test](https://github.com/voiceittech/voiceit3-java/actions/workflows/test.yml/badge.svg)](https://github.com/voiceittech/voiceit3-java/actions/workflows/test.yml)
+[![Dependabot](https://img.shields.io/github/issues-pr/voiceittech/voiceit3-java/dependencies?label=dependabot&logo=dependabot&color=025e8c)](https://github.com/voiceittech/voiceit3-java/pulls?q=is%3Apr+label%3Adependencies)
+[![Version](https://img.shields.io/badge/version-3.0.0-blue)](https://github.com/voiceittech/voiceit3-java)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green)](https://github.com/voiceittech/voiceit3-java/blob/main/LICENSE)
+[![Platform](https://img.shields.io/badge/platform-Java-lightgrey)](https://github.com/voiceittech/voiceit3-java)
 [![VoiceIt API](https://img.shields.io/badge/VoiceIt-API%203.0-blue)](https://voiceit.io)
 
 
@@ -23,7 +23,7 @@ Add as a dependency via Maven:
 
 Or clone directly:
 ```bash
-git clone https://github.com/voiceittech/VoiceIt3-Java.git
+git clone https://github.com/voiceittech/voiceit3-java.git
 ```
 
 ## Getting Started
@@ -38,7 +38,7 @@ You can visit our [HTTP API 3.0 Documentation](https://voiceit.io/documentation)
 
 If you find this SDK useful, please consider giving it a star on GitHub — it helps others discover the project!
 
-[![GitHub stars](https://img.shields.io/github/stars/voiceittech/VoiceIt3-Java?style=social)](https://github.com/voiceittech/VoiceIt3-Java/stargazers)
+[![GitHub stars](https://img.shields.io/github/stars/voiceittech/voiceit3-java?style=social)](https://github.com/voiceittech/voiceit3-java/stargazers)
 
 ## License
 
