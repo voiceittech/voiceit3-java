@@ -2,7 +2,7 @@
 
 [![API Test](https://github.com/voiceittech/voiceit3-java/actions/workflows/test.yml/badge.svg?branch=main)](https://github.com/voiceittech/voiceit3-java/actions/workflows/test.yml)
 [![Dependabot](https://img.shields.io/github/issues-pr/voiceittech/voiceit3-java/dependencies?label=dependabot&logo=dependabot&color=025e8c)](https://github.com/voiceittech/voiceit3-java/pulls?q=is%3Apr+label%3Adependencies)
-[![Version](https://img.shields.io/badge/version-3.0.3-blue)](https://github.com/voiceittech/voiceit3-java)
+[![Version](https://img.shields.io/badge/version-3.1.7-blue)](https://github.com/voiceittech/voiceit3-java)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green)](https://github.com/voiceittech/voiceit3-java/blob/main/LICENSE)
 [![Platform](https://img.shields.io/badge/platform-Java-lightgrey)](https://github.com/voiceittech/voiceit3-java)
 [![VoiceIt API](https://img.shields.io/badge/VoiceIt-API%203.0-blue)](https://voiceit.io)
@@ -17,7 +17,7 @@ Add as a dependency via Maven:
 <dependency>
   <groupId>com.github.voiceittech</groupId>
   <artifactId>voiceit3-java</artifactId>
-  <version>3.0.0</version>
+  <version>3.1.7</version>
 </dependency>
 ```
 
